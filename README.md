@@ -4,6 +4,8 @@
 
 cborn DocFlow, PDF ve görselleri yerelde OCR’dan geçirip kural bazlı etiketleyen masaüstü uygulamasıdır. Çekirdek akış offline çalışır; Gmail ve Outlook eklerini sonradan içe aktarma desteği de vardır.
 
+cborn DocFlow is a local-first desktop app for OCR processing of PDFs and images, rule-based tagging, and optional Gmail/Outlook attachment import.
+
 ## Ne yapar
 
 - Tek dosya OCR: PDF veya görsel seç, metni çıkar.
@@ -11,6 +13,16 @@ cborn DocFlow, PDF ve görselleri yerelde OCR’dan geçirip kural bazlı etiket
 - Kural bazlı etiketleme: `fatura`, `sozlesme` gibi etiketleri regex ile eşleştir.
 - Çıktı yönlendirme: istenirse etiket klasörlerine kopyala.
 - E-posta içe aktarma: Gmail ve Outlook eklerini indir.
+
+## English
+
+### What it does
+
+- Single-file OCR: choose a PDF or image and extract text.
+- Folder watching: automatically queue newly added files.
+- Rule-based tagging: match labels like `fatura` and `sozlesme` with regex rules.
+- Output routing: copy files into tag folders when enabled.
+- Email import: download attachments from Gmail and Outlook.
 
 ## Kurulum
 
@@ -28,7 +40,23 @@ pip install -r requirements.txt
    - [Tesseract installer](https://github.com/UB-Mannheim/tesseract/wiki)
    - Türkçe dil paketi için `tur` seçeneğini ekleyin.
 
-## Calistirma
+## English setup
+
+1. Python 3.11+ is recommended.
+2. Create a virtual environment:
+
+```bash
+cd c:\AI_PROJECTS\cborn-docflow
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+3. On Windows, install **Tesseract** separately and make sure `tesseract` is on PATH.
+   - [Tesseract installer](https://github.com/UB-Mannheim/tesseract/wiki)
+   - Add the Turkish language pack during installation if needed.
+
+## Calistirma / Run
 
 ```bash
 python main.py
@@ -48,6 +76,16 @@ python main.py
 - `inbox-demo/`: örnek gelen kutusu materyalleri
 - `scripts/`: örnek üretim yardımcıları
 
+## Project structure
+
+- `cborn_docflow/`: application code
+- `config/`: default settings and OAuth examples
+- `samples/`: test PDFs and images
+- `inbox-demo/`: sample inbox assets
+- `scripts/`: sample generation helpers
+
 ## PyCharm
 
 **File -> Open** ile `cborn-docflow` klasörünü açın. Interpreter olarak `.venv` içindeki `python.exe` seçin.
+
+Open the `cborn-docflow` folder with **File -> Open** and select the `.venv` `python.exe` as the interpreter.
