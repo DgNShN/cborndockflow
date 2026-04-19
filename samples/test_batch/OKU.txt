@@ -1,0 +1,14 @@
+cborn DocFlow — test_batch klasörü
+
+İçerik:
+  - 5 adet örnek fatura PDF (farklı metin/kelime dağılımı)
+  - 7 adet görüntü: .png .jpg .jpeg .tif .tiff .bmp .webp
+
+Klasör izleme:
+  İzleme başlatılmadan önce bu klasörde duran dosyalar atlanır.
+  Test: dosyaları başka klasöre taşı, izlemeyi başlat, sonra geri kopyala
+  VEYA «Mevcut PDF/görüntüleri şimdi işle» kullan.
+
+Tek dosya:
+  «Dosya seç ve OCR» ile buradan tek tek seçebilirsin.
+

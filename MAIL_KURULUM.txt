@@ -1,0 +1,44 @@
+cborn DocFlow — Gmail ve Outlook ek indirme
+===========================================
+
+Bu özellik internet ve OAuth gerektirir; ücret Google/Microsoft politikalarına bağlıdır.
+
+--- SON KULLANICI (satın alan / kuran) ---
+• DocFlow’u normal şekilde açın; E-posta sekmesinde «Gmail eklerini indir» veya
+  «Outlook eklerini indir»e basın.
+• Tarayıcı açılır: kendi Google veya Microsoft hesabınızla giriş yapıp izin verin.
+• Ekler seçtiğiniz klasöre iner; token’lar otomatik saklanır (~/.cborn-docflow/).
+• Google Cloud veya Azure panelleri sizin için gerekli değildir; bunlar yazılım
+  sağlayıcısının tek seferlik kurulumudur.
+
+--- YAYINCI / GELİŞTİRİCİ (paketleyen taraf) ---
+
+Gmail OAuth için adım adım rehber: config/GMAIL_OAUTH_KURULUM.txt
+
+GMAIL (bir kez, kendi Google Cloud projenizde)
+1) https://console.cloud.google.com/ → proje oluştur veya seç
+2) API’ler → Gmail API’yi etkinleştir
+3) Kimlik bilgileri → OAuth istemci kimliği → «Masaüstü uygulaması»
+4) İndirilen JSON’u uygulama paketine şu ada koyun:
+      config/gmail_client_secret.json   (geliştirme)
+   veya dağıtımda .exe ile aynı klasörde:
+      gmail_client_secret.json
+   (İsteğe bağlı: örnek şablon config/gmail_client_secret.json.example)
+5) OAuth izin ekranını (ve gerekirse doğrulamayı) ürün adınıza göre yayınlayın;
+   hassas kapsamlar için Google politikalarına uyun.
+
+OUTLOOK / MICROSOFT (bir kez, Azure’da uygulama kaydı)
+1) https://portal.azure.com/ → Uygulama kayıtları → Yeni kayıt
+2) Desteklenen hesap türleri: ihtiyaca göre (ör. kurumsal + kişisel Microsoft)
+3) Kimlik doğrulama → Mobil ve masaüstü uygulamaları → Yönlendirme URI: http://localhost
+4) API izinleri → Microsoft Graph → Yetkilendirilmiş: Mail.Read, User.Read
+5) Genel bakış → Uygulama (istemci) kimliğini kopyalayın; ürün ayarlarında varsayılan
+   olarak gömülü verebilir veya DocFlow Outlook alanına yapıştırmayı son kullanıcıya
+   bırakırsınız (dağıtım stratejinize bağlı).
+
+--- TEKNİK NOTLAR ---
+• İndirilen uzantılar: PDF ve yaygın görüntüler (png, jpg, …)
+• Son N mesaj taranır (varsayılan 20)
+• Gmail token: ~/.cborn-docflow/gmail_token.json
+• Gelişmiş: E-posta sekmesinde boş bırakılmayan «özel OAuth dosyası» alanı,
+  paketlenmiş dosyayı geçersiz kılar (IT / test için).

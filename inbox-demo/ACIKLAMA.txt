@@ -1,0 +1,17 @@
+cborn DocFlow — klasör izleme testi
+
+Bu klasörde:
+  - ornek_fatura.pdf  (PDF)
+  - ornek.png         (PNG görüntü)
+
+İzleme başlatıldığında klasörde ZATEN DURAN dosyalar işlenmez (bilinçli).
+
+Test için:
+  1) DocFlow'ta bu klasörü seç, "İzlemeyi başlat".
+  2) ornek_fatura.pdf dosyasını başka yere taşı, sonra tekrar bu klasöre kopyala
+     VEYA yeni bir PDF/PNG'yi buraya kopyala.
+
+Böylece logda "Kuyruk" ve "OK" satırlarını görürsün.
+
+Tam yol örneği:
+  c:\AI_PROJECTS\cborn-docflow\inbox-demo

@@ -1,0 +1,22 @@
+{
+  "rules": [
+    {
+      "name": "fatura",
+      "pattern": "fatura|invoice|vat|kdv",
+      "tag": "fatura",
+      "ignore_case": true
+    },
+    {
+      "name": "sözleşme",
+      "pattern": "sözleşme|contract",
+      "tag": "sozlesme",
+      "ignore_case": true
+    }
+  ],
+  "output": {
+    "enabled": false,
+    "directory": "",
+    "by_tag_subfolders": true,
+    "unmatched_subfolder": "_diger"
+  }
+}

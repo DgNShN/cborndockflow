@@ -1,0 +1,53 @@
+Cborn DocFlow — Gmail OAuth (yayıncı, bir kez)
+==============================================
+
+Uygulama şu kapsamı kullanır (kodla aynı):
+  https://www.googleapis.com/auth/gmail.readonly
+
+İstemci türü: Masaüstü uygulaması (Desktop).
+İndirilen JSON içinde "installed": { ... } bloğu olmalı (Web istemcisi değil).
+
+ADIMLAR
+--------
+
+1) https://console.cloud.google.com/ — Google ile giriş, üstten proje seç veya
+   «Yeni proje» (ör. adı: cborn-docflow).
+
+2) «API'ler ve Hizmetler» → «Kitaplık» → «Gmail API» → Etkinleştir.
+
+3) «OAuth izin ekranı»:
+   - Kullanıcı türü: Genelde «Harici» (kendi domain / doğrulama gereksinimlerine göre).
+   - Uygulama adı: örn. «Cborn DocFlow» (kullanıcıların göreceği isim).
+   - Destek e-postası ve geliştirici iletişim: kendi kurumsal adresin.
+   - Kapsamlar: «Kapsam ekle veya kaldır» → Manuel → şunu ekle:
+       .../auth/gmail.readonly
+   - Kaydet. (Yayın / doğrulama: Google’ın güncel kurallarına göre ilerle.)
+
+4) «Kimlik bilgileri» → «Kimlik bilgisi oluştur» → «OAuth istemci kimliği»:
+   - Uygulama türü: «Masaüstü uygulaması»
+   - Ad: örn. «DocFlow Windows» — isteğe bağlı.
+   - Oluştur → JSON İNDİR.
+
+5) İndirilen dosyayı bu projede şu ada kopyala / yeniden adlandır:
+       config/gmail_client_secret.json
+
+   Google bazen dosyayı client_secret_....json diye indirir; içeriği aynıdır,
+   sadece adı gmail_client_secret.json yap.
+
+6) Bu dosyayı GIT’e ekleme (gizli anahtar içerir). .gitignore zaten hariç tutar.
+
+7) Uygulamayı çalıştır → E-posta → «Gmail eklerini indir» → tarayıcı açılır,
+   bağlanmak istediğin Gmail hesabıyla giriş (bu senin veya müşterinin hesabı).
+
+DAĞITIM (.exe)
+--------------
+PyInstaller vb. ile paketlerken aynı dosyayı yürütülebilirin yanına da koyabilirsin:
+  gmail_client_secret.json
+(kod, «frozen» modda bu yolu da arar.)
+
+Sorun giderme
+-------------
+• «redirect_uri_mismatch» → Masaüstü istemcisi kullandığından emin ol; Web değil.
+• «Access blocked» → OAuth ekranı test modundaysa test kullanıcıları veya yayına alma.
+• Dosya yolu → E-posta sekmesindeki «özel OAuth» alanı boş kalsın; dosya config’te
+  veya .exe yanında olsun.

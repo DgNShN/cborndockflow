@@ -1,0 +1,13 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.idea/
+*.log
+.env
+*.local
+credentials.json
+**/credentials.json
+config/gmail_client_secret.json
