@@ -120,6 +120,16 @@ Contributions are welcome. If you want to improve the project:
 3. Make your change and test it locally.
 4. Open a pull request with a clear summary.
 
+## Project docs
+
+- `CONTRIBUTING.md` - contribution workflow and expectations
+- `CODE_OF_CONDUCT.md` - community standards
+- `SECURITY.md` - how to report vulnerabilities safely
+- `SUPPORT.md` - where to get help and how to report issues
+- `CHANGELOG.md` - notable project updates
+- `.github/pull_request_template.md` - PR checklist
+- `.github/ISSUE_TEMPLATE/` - issue forms for bugs and feature requests
+
 ## PyCharm
 
 **File -> Open** ile `cborn-docflow` klasörünü açın. Interpreter olarak `.venv` içindeki `python.exe` seçin.
