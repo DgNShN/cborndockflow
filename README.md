@@ -27,7 +27,7 @@ cborn DocFlow, PDF ve görselleri yerelde OCR’dan geçirip kural bazlı etiket
 
 - Single-file OCR: choose a PDF or image and extract text.
 - Folder watching: automatically queue newly added files.
-- Rule-based tagging: match labels like `fatura` and `sozlesme` with regex rules.
+- Rule-based tagging: match labels like `invoice` and `contract` with regex rules.
 - Output routing: copy files into tag folders when enabled.
 - Email import: download attachments from Gmail and Outlook.
 
