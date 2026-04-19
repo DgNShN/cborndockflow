@@ -2,6 +2,11 @@
 
 ![cborn DocFlow overview](assets/overview.svg)
 
+![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Desktop App](https://img.shields.io/badge/Desktop-App-111827)
+![OCR](https://img.shields.io/badge/OCR-Tesseract-orange)
+
 ## About
 
 cborn DocFlow is a polished, local-first desktop app for OCR processing of PDFs and images, rule-based tagging, and optional Gmail/Outlook attachment import. It is designed for fast document intake workflows where privacy, control, and repeatable classification matter.
@@ -25,6 +30,12 @@ cborn DocFlow, PDF ve görselleri yerelde OCR’dan geçirip kural bazlı etiket
 - Rule-based tagging: match labels like `fatura` and `sozlesme` with regex rules.
 - Output routing: copy files into tag folders when enabled.
 - Email import: download attachments from Gmail and Outlook.
+
+## Screenshot
+
+The overview graphic below shows the main workflow and core capabilities.
+
+![cborn DocFlow overview](assets/overview.svg)
 
 ## Kurulum
 
@@ -64,11 +75,25 @@ pip install -r requirements.txt
 python main.py
 ```
 
+### Usage example
+
+1. Open the app.
+2. Pick a PDF or image, or start folder watching.
+3. Let OCR extract the text.
+4. Apply rule-based tags.
+5. Optionally export the text or route the file to an output folder.
+
 ## Yapilandirma
 
 - Kural ve çıktı ayarları: `config/docflow.json`
 - Gmail OAuth örneği: `config/gmail_client_secret.json.example`
 - Gerçek OAuth dosyası gizli kalır ve Git'e girmez.
+
+## Release notes
+
+- Initial GitHub release with the desktop OCR workflow.
+- Added folder watching, rule-based tagging, and optional mail import.
+- Added a polished project overview graphic and bilingual documentation.
 
 ## Repo yapisi
 
@@ -85,6 +110,15 @@ python main.py
 - `samples/`: test PDFs and images
 - `inbox-demo/`: sample inbox assets
 - `scripts/`: sample generation helpers
+
+## Contributing
+
+Contributions are welcome. If you want to improve the project:
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your change and test it locally.
+4. Open a pull request with a clear summary.
 
 ## PyCharm
 
